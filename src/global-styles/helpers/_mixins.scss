@@ -1,0 +1,25 @@
+@mixin device($screen) {
+    @if $screen==tablet {
+        @media (min-width: 481px) and (max-width: 768px) {
+            @content;
+        }
+    }
+
+    @if $screen==smallscreen {
+        @media (min-width: 769px) and (max-width: 1024px) {
+            @content;
+        }
+    }
+
+    @if $screen==largescreen {
+        @media (min-width: 1025px) and (max-width: 1200px) {
+            @content;
+        }
+    }
+
+    @else if $screen==extralargescreen {
+        @media (min-width:1201px) {
+            @content;
+        }
+    }
+}
